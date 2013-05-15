@@ -1,0 +1,23 @@
+#imgwrapper {
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+#nextImg {
+    float: right;
+}
+
+#prevImg {
+    float: left;
+ 
+}
+
+#imgHelp {
+    width: 100%;
+    margin: auto;
+}
+
+#imgHeader {
+    color: white;
+}

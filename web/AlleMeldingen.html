@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alle Meldingen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <link href="css/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet">
+        <link href="css/custom-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/custom-theme.css" />
+        <link href="css/photoswipe.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/tabelData.css" />
+        <script src="js/script.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/klass.min.js"></script>
+        <script src="js/code.photoswipe.jquery-3.0.5.min.js"></script> 
+        <script src="js\restMeldingen.js"></script>
+
+        <!--JQM SlideMenu-->
+        <link rel="stylesheet" href="css/jqm.slidemenu.css" />
+        <script src="js/jqm.slidemenu.js"></script>
+
+    </head>
+    <body>
+        <div id="slidemenu">
+
+            <div id="profile">
+                <img src="icons/Actions-dialog-ok-apply-icon.png">
+                <div class="profile_info"><strong>SD Soft</strong><br><small>When developers meet<br> community</small></div>
+            </div>
+
+            <h3></h3>
+
+            <ul>
+                <li><a href="index.html#profiel" rel="external"><img src="icons/16x16/Profile-icon.png">Profiel</a></li>
+                <li><a href="AlleEvenementen.html" rel="external"><img src="icons/16x16/maps-icon.png">Alle Evenementen </a></li>
+                <li><a href="AlleMeldingen.html" rel="external"><img src="icons/16x16/Sign-Alert-icon.png">Alle Meldingen</a></li>
+                <li><a href="index.html#contact" rel="external"><img src="icons/16x16/Mail-icon.png">Contact</a></li>
+                <li><a href="index.html#help" rel="external"><img src="icons/16x16/Button-Help-icon.png">Help</a></li>
+            </ul>
+
+
+        </div>
+
+        <div id="home" data-role="page" data-theme="b">
+
+            <header data-role ="header" data-theme="b"> 
+                <h1></h1>
+
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu" data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="index.html#begin"  data-theme="b" rel="external" >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </header>    
+            <div class="trg" class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="index.html#begin" rel="external" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+
+
+            <div data-role="content">
+
+                <div id="meldingen" style="color:white; text-align: center;">
+                </div>    
+              </div>
+         
+        </div>
+    </body>
+</html>

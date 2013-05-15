@@ -1,0 +1,57 @@
+#adminlogin {
+    background-image: url("../images/Abstract%20Green%20Rays%20Vector%20Background.jpg");
+
+}
+#wrapper{
+    border: solid 1px black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    background-color: #857750;
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    height: 400px;
+    margin-top: -200px;
+
+    width: 600px;
+    margin-left: -300px;
+    border-radius:50px;
+    color: #D1CCBC;
+
+}
+#wrapper h1{
+
+    text-align:center;
+    padding:15px;
+    
+
+
+}
+#lable{
+    width: 300px;
+    margin: 0 auto;
+}
+#btn {
+    width: 300px;
+    margin: 0 auto;
+    
+}
+#btn input[type=button]{
+   padding: 3px 3px;
+   background: #D1CCBC;
+   color: #857750;
+   border-radius:4px;
+}
+
+#btn input[type=reset]{
+   padding: 3px 3px;
+   background: #D1CCBC;
+   color: #857750;
+   border-radius:4px;
+    
+}
+
+#button{
+float-left: 60%;
+    
+}

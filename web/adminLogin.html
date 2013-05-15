@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+            Admin login
+        </title>
+        <link href="css/adminLogin.css" rel="stylesheet">
+    </head>
+    <body id="adminlogin">
+        <div id="wrapper">
+            <h1>
+                Admin Login 
+            </h1>
+            <form id="loginform" name="login">
+                <div id="lable">Gebruikersnaam: <input type="text" name="userid"/></div>
+                <div id="lable">Paswoord:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="pswrd"/></div>
+                <div id="btn"><input type="button" onclick="check(this.form)" value="Login"/>
+                <input type="reset" value="Cancel"/></div>
+            </form>
+            <script language="javascript">
+                    function check(form)/*function to check userid & password*/
+                    {
+                        /*the following code checkes whether the entered userid and password are matching*/
+                        if (form.userid.value == "lode" && form.pswrd.value == "123456")
+                        {
+                            window.location = 'adminPanelEvenementen.html'; /*opens the target page while Id & password matches*/
+                        }
+                        else
+                        {
+                            alert("Error Password or Username")/*displays error message*/
+                        }
+                    }
+            </script>
+        </div>
+    </body>
+</html>

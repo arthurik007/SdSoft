@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AdminPanel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/adminCss.css" />
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/AdminrestMelding.js"></script>
+
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <link href="css/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet">
+        <link href="css/custom-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/custom-theme.css" />
+        <link href="css/photoswipe.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/tabelData.css" />
+        <script src="js/script.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/klass.min.js"></script>
+        <script src="js/code.photoswipe.jquery-3.0.5.min.js"></script> 
+
+    </head>
+    <body>
+        <div id ="container">
+            <header data-role ="header" data-theme="b"> 
+                <h1>Meldingenpaneel</h1>
+                
+            </header> 
+            <h1></h1>
+        <div id="Meldingcontent">
+            <div id="meldingen" style="color: white; text-align: center;">
+            </div>
+            <label for="meldid" class="ui-hidden-accessible">ID van te verwijderen melding :</label>
+            <input type="text" name="str" id="meldid" value="" placeholder="MeldingID" data-theme="a"/>
+            <button type="submit" data-theme="b" id ="meldingDelete" onclick="deleteMelding();" >Verwijderen</button>  
+
+        </div>
+            <div class="bh"> <a data-role="button" data-corners="false" class="ui-btn-right" href="adminPanelEvenementen.html" data-theme="b" rel="external" >
+                        Evenementenpaneel
+                    </a></div>
+
+
+        </div>
+
+    </body>
+</html>

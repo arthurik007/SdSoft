@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Mijn Buurt</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <link href="css/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet">
+        <link href="css/custom-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/custom-theme.css" />
+
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/jqm.slidemenu.css" />
+        <script src="js/script.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/klass.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="js/jquery.animate-enhanced.min.js"></script>
+        <!--JQM globals you can edit or remove file entirely... note it needs to be loaded before jquerymobile js -->
+        <script src="js/jqm.globals.js"></script>
+        <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+        <!--JQM SlideMenu-->
+        <script src="js/jqm.slidemenu.js"></script>
+        <script src="js/fbLoad.js"></script>
+	<script src='js/helpImage.js'></script>
+        <script src="js/jquery.ui.map.full.min.js"></script>
+        <link href="css/imgHelp.css" rel="stylesheet"/>
+           <script src="js/restEvenementen.js"></script>
+   
+        <script src="MapsJS/EventMap.js"></script>
+         <script src="js/restMeldingen.js"></script>
+      
+        <script src="MapsJS/MeldMap.js"></script>
+        <script src="MapsJS/Map.js"></script>
+    </head>
+
+    <body >
+
+        <div id="home" data-role="page" data-theme="b">
+            <div data-role="header" data-position="fixed">
+                
+                <p class="copyright">Onze Buurt</p>
+            </div>
+            <div id="fb-root"></div>
+            <div style="text-align: center; margin: 0 auto; width: 110px;">
+                <a data-theme="d" data-corners="false" data-role="button">
+                    <img id="fb-auth" src="icons/FaceBook-icon.png" alt="facebooklogin" style="display : block; margin: 0 auto;"/>
+                </a>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div class="bh"><a class="ui-btn-right" data-role="button" href="adminLogin.html" data-corners="false" rel="external">Beheerderspaneel</a></div>
+                <p class="copyright">&copy; SD Soft Copyright 2013</p>
+            </div>
+        </div>
+
+        <div id="slidemenu" style="display: none">
+
+            <div id="profile">
+                <img src="icons/Actions-dialog-ok-apply-icon.png">
+                <div class="profile_info"><strong>SD Soft</strong><br><small>When developers meet<br> community</small></div>
+            </div>
+
+            <h3></h3>
+
+            <ul>
+                <li><a href="#profiel" rel="external"><img src="icons/16x16/Profile-icon.png">Profiel</a></li>
+                <li><a href="AlleEvenementen.html" rel="external"><img src="icons/16x16/maps-icon.png">Alle Evenementen </a></li>
+                <li><a href="AlleMeldingen.html" rel="external"><img src="icons/16x16/Sign-Alert-icon.png">Alle Meldingen</a></li>
+                <li><a href="#contact" rel="external"><img src="icons/16x16/Mail-icon.png">Contact</a></li>
+                <li><a href="#help" rel="external"><img src="icons/16x16/Button-Help-icon.png">Help</a></li>
+                <li id="fblogout" onclick="logout();" style="display: none;"><a href="#" rel="external"><img src="icons/fb32.png">Log out - Facebook</a></li>
+            </ul>
+        </div>
+
+
+        <!-- homepage -->
+        <div id="begin" data-role="page" data-theme="b">
+            <header data-role ="header" data-theme="b"> 
+                <h1></h1>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu" data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </header>           
+            <div data-role="content">
+
+
+                <div class="pt-menu">
+                    <a data-theme="b" data-corners="false" data-role="button" href="#meld1" data-transition="slide">
+                        <img src="icons/map-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                        Event
+                    </a>
+
+                    <a data-theme="b" data-corners="false" data-role="button" href="#meld2" data-transition="slide">
+                        <img src="icons/Sign-Alert-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                        Melding
+                    </a>
+
+                    
+
+                </div>
+
+                    
+            </div>
+
+         <div id="map_canvas" class="maps"></div>
+            <div class="lg"> 
+                <div class="nv">
+                    <ul id="nav">
+                        <li><a href="#meld1">Evenement</a></li>
+                        <li><a href="#meld2">Melding</a></li>
+                        <li><a href="AlleEvenementen.html" rel="external">Alle Evenementen</a></li>
+                        <li><a href="AlleMeldingen.html" rel="external">Alle Meldingen</a></li>
+                        <li><a href="#profiel">Profiel</a></li>
+                        <li><a href="#contact">Contact</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <!-- Event page -->
+     
+
+        <div data-role="page" id="meld1" data-title="Evenement">
+            <div data-role="header" data-theme="b">
+                <h1></h1>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu" data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#begin" data-transition="slide" data-theme="b"  >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="trg" class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="#begin" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+            <div data-role="content" class="content">
+
+               
+                <div id="map_canvas1"  class="maps1"></div>   
+
+
+                <label for="st" class="ui-hidden-accessible">Gebruikersnaam:</label>
+                <input type="text" name="str" id="username" value="" placeholder="gebruikersnaam" data-theme="a"/>
+                <label for="st" class="ui-hidden-accessible">Straat:</label>
+                <input type="text" name="str" id="st" value="" placeholder="straat" data-theme="a"/>
+                <label for="stn" class="ui-hidden-accessible">Straatnummer:</label>
+                <input type="text" name="stn" id="stn" value="" placeholder="straatnummer" data-theme="a"/>
+                <label for="std" class="ui-hidden-accessible">Stad:</label>
+                <input type="text" name="std" id="std" value="" placeholder="stad" data-theme="a"/>
+                <select id='soort' data-theme="b">
+                    <option  value='buurtfeest'  SELECTED>Buurtfeest</option>
+                    <option value='inzamelactie'>Inzamelactie</option>
+                    <option value='barbecue'>Barbecue</option>
+                    <option value="andere">Andere</option>
+                </select> 
+                <label for="om" class="ui-hidden-accessible">Omschrijving:</label>
+                <textarea cols="40" rows="8" name="oms" id="om" placeholder="Omschrijving Evenement" data-theme="a"></textarea>
+
+                <select name="flip-1" id="flip-1" data-role="slider">
+                    <option value="off">Nee</option>
+                    <option value="on" selected>Delen</option>
+                </select>
+                
+                    <button type="submit" data-theme="b" id ="evenementSave" onclick="createEvenement();">Opslaan</button>
+                
+                <div class="fld">
+                    <input type="text" id="latFld" data-theme="b">
+                    <input type="text" id="lngFld" data-theme="b">    
+                </div>
+            </div>   
+          
+        </div>
+
+        <!-- Meldingen1 page -->
+       
+
+        <div data-role="page" id="meld2" data-title="Meldingen">
+            <div data-role="header" data-theme="b">
+                <h1></h1>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu" data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#begin" data-transition="slide" data-theme="b" >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </div>
+            <div class="trg" class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="#begin" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+
+            <div data-role="content" class="content">
+
+
+
+                <div id="map_canvas2"  class="maps1"></div>   
+
+
+                <label for="st1" class="ui-hidden-accessible">Gebruikersnaam:</label>
+                <input type="text" name="str1" id="username1" value="" placeholder="gebruikersnaam" data-theme="a"/>
+                <label for="st1" class="ui-hidden-accessible">Straat:</label>
+                <input type="text" name="str1" id="st1" value="" placeholder="straat" data-theme="a"/>
+                <label for="stn1" class="ui-hidden-accessible">Straatnummer:</label>
+                <input type="text" name="stn1" id="stn1" value="" placeholder="straatnummer" data-theme="a"/>
+                <label for="std1" class="ui-hidden-accessible">Stad:</label>
+                <input type="text" name="std1" id="std1" value="" placeholder="stad" data-theme="a"/>
+                <select id='soort1' data-theme="b">
+                    <option  value='file'  SELECTED>File</option>
+                    <option value='afval'>Afval</option>
+                    <option value='andere'>Andere</option>
+                </select> 
+                <label for="om" class="ui-hidden-accessible">Omschrijving:</label>
+                <textarea cols="40" rows="8" name="oms" id="om1" placeholder="Omschrijving Melding" data-theme="a"></textarea>
+
+                <select name="flip-1" id="flip-2" data-role="slider">
+                    <option value="off">Nee</option>
+                    <option value="on" selected>Delen</option>
+                </select>
+                
+                    <button type="submit" data-theme="b" id ="evenementSave" onclick="createMelding();" >Opslaan</button>
+            
+
+                <div class="fld">
+                    <input type="text" id="latFld1" data-theme="b">
+                    <input type="text" id="lngFld1" data-theme="b">   
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Contact page -->
+        <div data-role="page" id="contact" data-title="Contact">
+            <div data-role="header" data-theme="b">
+                <h1></h1>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#begin"  data-theme="b" rel="external" >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu"  data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </div>
+            <div class="trg" class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="#begin" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+            <div data-role="content" class="content">
+
+                <form method="POST" action="php/contact.php" id="contact" novalidate>
+
+
+                    <p style="color:white; font-size: 15px;">  Naam*:</p>
+
+                    <input type="text" class="required "
+                           value="" name="naam" id="naam" data-corners="false">
+
+
+
+                    <p style="color:white; font-size: 15px;">Email*: </p>
+
+                    <input type="email" class="required "
+                           value="" name="email" id="email" data-corners="false">
+
+
+                    <p style="color:white; font-size: 15px;">  Bericht*:</p>
+
+                    <textarea class="required "
+                              rows="8" cols="160" name="br" id="br" data-corners="false"></textarea>
+
+                    <button type="versturen" data-theme="b" name="versturen" value="versturen" class="ui-btn-hidden" aria-disabled="false" data-corners="false">Versturen</button>
+                </form>
+
+
+            </div>
+            
+        </div>
+
+        <!-- PROFIEL -->
+        <div data-role="page" data-theme="b" id="profiel">
+            <div data-role="header" data-theme="b">
+                <h1></h1>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#begin"  data-theme="b" rel="external" >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu"  data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </div>
+            <div class="trg" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="#begin" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+            <div id="userInfo" style="display: none;" align="center">
+            </div>
+           
+
+        </div>
+		
+	<!-- HELP PAGINA -->
+        <div data-role="page" data-theme="b" id="help">
+           <div data-role="header" data-theme="b">
+                <h1>Help</h1>
+                <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-slidemenu="#slidemenu" data-theme="b" rel="external" >
+                        <img src="icons/16x16/view-text-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#begin" data-transition="slide" data-theme="b"  >
+                        <img src="icons/16x16/Home-icon.png" alt="rss" style="display: block; margin: 0 auto">
+                    </a>
+                </div>
+            </div>
+            <div class="trg" class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+                <a data-theme="b" data-corners="false" data-role="button" href="#begin" data-transition="slide">
+                    Terug
+                </a>
+            </div>
+            <div data-role="content" class="content">
+                <div id="imgwrapper">
+                    <div id="prevImg">
+                        <a data-theme="b" data-corners="false" data-role="button" onclick="prevImage();">
+                            <img src="images/previous.png" alt="previous">
+                        </a>
+                    </div>
+                    <div id="nextImg">
+                        <a data-theme="b" data-corners="false" data-role="button" onclick="nextImage();">
+                            <img src="images/next.png" alt="next">
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div id="helpIMG" align="center">
+                    <h2 id="imgHeader"></h2>
+                    <img id="current" src="images/1.png"/>                
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </body>
+
+</html>

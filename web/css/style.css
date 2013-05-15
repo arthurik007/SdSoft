@@ -1,0 +1,233 @@
+.copyright {
+    font-size: 12px;
+    text-align: center;
+}
+
+.ui-content {
+    text-align: center;
+
+}
+
+.pt-menu .ui-btn {
+    cursor: pointer;
+    display: inline-block;
+    height: 100px;
+    margin: 5px !important;
+    padding: 10px;
+    text-align: center;
+    width: 110px;
+    /*border-radius: 200px;*/
+}
+
+.pt-menu .ui-btn-inner {
+    border: 0;
+}
+
+.pt-menu .ui-btn img {
+    /*height: 50px;*/
+}
+
+
+/* contact page */
+#contact .ui-br {
+    border: 0;
+}
+
+/* form underline bug fix */
+.ui-br {
+    border-bottom: none !important;
+}
+
+/* form errors */
+label.error {
+    color: red;
+    padding-top: .5em;
+    vertical-align: top;
+    font-weight:bold;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 22%;
+}
+
+
+/* table styles */
+.tablerow {
+    display: inline-block;
+    width: 100%;
+}
+.left-table {
+    text-align: right;
+    width: 25%; float: left;
+    padding-right: 2%;
+    font-weight: bold;
+}
+.right-table {
+    text-align: left;
+    width: 73%; float: left;
+}
+
+/* bottom back and next buttons */
+.previous-btn {
+    float: left;
+}
+.next-btn {
+    float: right;
+}
+
+/* toggle buttons styles */
+.ui-collapsible-heading-toggle {
+    border: none;
+}
+
+/* ui component tweaks */
+.ui-textalign-left {
+    text-align: left;
+}
+
+/* portfolio item right button stlye fix */
+.portfolio-item .ui-btn-icon-notext {
+    padding: 0 !important;
+}
+
+.ui-page {
+    background:url(../images/Abstract%20Green%20Rays%20Vector%20Background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;          
+    -moz-background-size: cover;         
+    -o-background-size: cover;          
+    background-size: cover;
+}  
+
+.maps {
+    overflow: hidden;
+    background-color:#FFFFFF;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-height:250px;
+    height:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:30px;
+    padding-left:30px;
+    border:2px solid;
+    border-radius:20px;
+}
+.maps1 {
+    overflow: hidden;
+    background-color:#FFFFFF;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-height:150px;
+    height:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:30px;
+    padding-left:30px;
+    border:2px solid;
+    border-radius:20px;
+}
+.fld{
+    display: none;
+}
+.content{
+    display: block;
+}
+.lg{
+    display: none;
+
+}
+.trg{
+    display: none;
+}
+.nv{
+    width: 550px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin: auto;
+}
+
+#nav
+{
+    padding:0;
+
+
+
+}
+
+#nav li
+{
+    display:inline;
+
+}
+
+#nav li a
+{  
+    font-family:Calibri;
+    font-size:15px;
+    text-decoration: none;
+    float:left;
+    padding:10px;
+    background-color: #333333;
+    color:#ffffff;
+    border-bottom:1px;
+    border-bottom-color:#000000;
+    border-bottom-style:solid;
+}
+
+#nav li a:hover
+{
+    background-color: #009999;
+    padding-bottom:15px;
+    border-bottom:2px;
+    border-bottom-color:#000000;
+    border-bottom-style:solid;
+    margin:-1px;
+}
+.bh{
+    display: block;
+}
+
+/* profiel style */
+
+.profielcontent
+{
+    color: white;
+
+}
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .maps1{
+        min-height: 500px;
+    }
+    .maps{
+        min-height: 700px;
+    }
+    .pt-menu .ui-btn {
+        display:none;
+    }
+    .lg{
+        display: block;
+
+    }
+    .trg{
+        display: block;
+    }
+    .content{
+        display: block;
+        width: 700px;
+        margin-left: auto ;
+        margin-right: auto ;
+        margin: auto;
+   
+    }
+    .bh{
+        display: block;
+    }
+
+}
+
+
+
