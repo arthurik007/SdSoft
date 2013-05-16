@@ -88,8 +88,8 @@ function createEvenement()
     evenement.longitude = jQuery.trim($("#lngFld").val());
     evenement.gebruikernaam = jQuery.trim($("#username").val());
     //evenement.gebruikernaam = ingelogdeUser;
-    alert(evenement.straat);
-    alert(evenement.gebruikernaam);
+    //alert(evenement.straat);
+    //alert(evenement.gebruikernaam);
     var url = "http://localhost:8080/projectdb/resources/evenementen/";
     var request = new XMLHttpRequest();
     request.open("POST" , url);
@@ -98,7 +98,7 @@ function createEvenement()
         {
              evenement.evenementenID = request.getResponseHeader("Location").split("/").pop();
              evenementen.push(evenement);
-             alert("werkt wel");
+            // alert("werkt wel");
              //fb post
              publishEvent();
         }

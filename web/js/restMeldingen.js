@@ -103,8 +103,8 @@ function createMelding()
     melding.longitude = jQuery.trim($("#lngFld1").val());
     melding.gebruikernaam = jQuery.trim($("#username1").val());
     //melding.gebruikernaam = ingelogdeUser;
-    alert(melding.straat);
-    alert(melding.gebruikemrnaam);
+    //alert(melding.straat);
+    //alert(melding.gebruikemrnaam);
     var url = "http://localhost:8080/projectdb/resources/meldingen/";
     var request = new XMLHttpRequest();
     request.open("POST" , url);
@@ -113,7 +113,7 @@ function createMelding()
         {
              melding.meldingID = request.getResponseHeader("Location").split("/").pop();
              meldingen.push(melding);
-             alert("werkt wel");
+             //alert("werkt wel");
              //fb post
              publishMelding();
         }
